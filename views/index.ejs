@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de IOT</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+   <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">IOT</a>
+        </div>  
+    </nav>
+    <br>
+
+    <center>
+    <h1>Depósito</h1>
+    <p>Registro de empleados</p>
+   <div class="container">
+       <div class="col-md-5">
+           <div class="card">
+               <div class="card-body">
+                    <form action="/add" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="tarjeta" placeholder="Tarjeta" class="form-control">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="text" name="user" placeholder="Usuario" class="form-control">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="text" name="puesto" placeholder="Puesto" class="form-control">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="date" name="fecha" placeholder="Fecha" class="form-control">
+                        </div>
+                        <br>
+                        <br>
+                        <button class="btn btn-sm btn-outline-secondary">Registrar</button>
+                    </form>
+               </div>
+           </div>
+        </div>
+        <div class="col-md-5">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>tarjeta</th>
+                        <th>user</th>
+                        <th>puesto</th>
+                        <th>fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(var i = 0; i < IoT_proyecto.lenght ; i++){ %>
+                        <tr>
+                            <td><%= i+1 %></td>
+                            <td><%= IoT_proyecto[i].tarjeta %></td>
+                            <td><%= IoT_proyecto[i].user %></td>
+                            <td><%= IoT_proyecto[i].puesto %></td>
+                            <td><%= IoT_proyecto[i].fecha %></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+        </center>
+</body>
+</html>
